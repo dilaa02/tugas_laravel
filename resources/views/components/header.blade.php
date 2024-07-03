@@ -1,4 +1,4 @@
-<div class="navbar-bg"></div>
+<div class="navbar-bg bg-success"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
     <form class="form-inline mr-auto">
         <ul class="navbar-nav mr-3">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="search-item">
                     <a href="#">
-                        <div class="search-icon bg-primary mr-3 text-white">
+                        <div class="search-icon bg-success mr-3 text-white">
                             <i class="fas fa-laptop"></i>
                         </div>
                         Create a new Homepage Design
@@ -185,12 +185,12 @@
                 <div class="dropdown-list-content dropdown-list-icons">
                     <a href="#"
                         class="dropdown-item dropdown-item-unread">
-                        <div class="dropdown-item-icon bg-primary text-white">
+                        <div class="dropdown-item-icon bg-success text-white">
                             <i class="fas fa-code"></i>
                         </div>
                         <div class="dropdown-item-desc">
                             Template update is available now!
-                            <div class="time text-primary">2 Min Ago</div>
+                            <div class="time text-success">2 Min Ago</div>
                         </div>
                     </a>
                     <a href="#"
