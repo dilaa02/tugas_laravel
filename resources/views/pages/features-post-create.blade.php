@@ -17,7 +17,7 @@
         <section class="section">
             <div class="section-header">
                 <div class="section-header-back">
-                    <a href="features-posts.html"
+                    <a href="{{ url('features-post') }}"
                         class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
                 </div>
                 <h1>Create New Post</h1>
@@ -61,7 +61,7 @@
                                 <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Content</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote-simple"></textarea>
+                                        <textarea class="summernote-simple form-control"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
@@ -85,19 +85,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <select class="form-control selectric">
-                                            <option>Publish</option>
-                                            <option>Draft</option>
-                                            <option>Pending</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                     <div class="col-sm-12 col-md-7">
-                                        <button class="btn btn-primary">Create Post</button>
+                                        <button class="btn btn-primary mx-1">Create Post</button>
+                                        <a href="{{ url('features-post') }}" class="btn btn-warning">Cancel</a>
                                     </div>
                                 </div>
                             </div>

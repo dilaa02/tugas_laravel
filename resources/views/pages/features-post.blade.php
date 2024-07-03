@@ -12,9 +12,9 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Posts</h1>
+                <h1>Stock</h1>
                 <div class="section-header-button">
-                    <a href="features-post-create.html"
+                    <a href="{{ url('features-post-create') }}"
                         class="btn btn-primary">Add New</a>
                 </div>
                 <div class="section-header-breadcrumb">
