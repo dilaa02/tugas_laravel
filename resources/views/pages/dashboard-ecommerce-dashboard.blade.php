@@ -74,7 +74,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-icon shadow-primary bg-primary">
+                        <div class="card-icon shadow-success bg-success">
                             <i class="fas fa-archive"></i>
                         </div>
                         <div class="card-wrap">
@@ -93,7 +93,7 @@
                             <canvas id="balance-chart"
                                 height="80"></canvas>
                         </div>
-                        <div class="card-icon shadow-primary bg-primary">
+                        <div class="card-icon shadow-success bg-success">
                             <i class="fas fa-dollar-sign"></i>
                         </div>
                         <div class="card-wrap">
@@ -112,7 +112,7 @@
                             <canvas id="sales-chart"
                                 height="80"></canvas>
                         </div>
-                        <div class="card-icon shadow-primary bg-primary">
+                        <div class="card-icon shadow-success bg-success">
                             <i class="fas fa-shopping-bag"></i>
                         </div>
                         <div class="card-wrap">
@@ -134,7 +134,7 @@
                         </div>
                         <div class="card-body">
                             <canvas id="myChart"
-                                height="158"></canvas>
+                                height="100"></canvas>
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                             <div class="card-header-action dropdown">
                                 <a href="#"
                                     data-toggle="dropdown"
-                                    class="btn btn-danger dropdown-toggle">Month</a>
+                                    class="btn btn-warning dropdown-toggle">Month</a>
                                 <ul class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
                                     <li class="dropdown-title">Select Period</li>
                                     <li><a href="#"
@@ -176,12 +176,12 @@
                                         <div class="media-title">oPhone S9 Limited</div>
                                         <div class="mt-1">
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-primary"
+                                                <div class="budget-price-square bg-success"
                                                     data-width="64%"></div>
                                                 <div class="budget-price-label">$68,714</div>
                                             </div>
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-danger"
+                                                <div class="budget-price-square bg-warning"
                                                     data-width="43%"></div>
                                                 <div class="budget-price-label">$38,700</div>
                                             </div>
@@ -200,12 +200,12 @@
                                         <div class="media-title">iBook Pro 2018</div>
                                         <div class="mt-1">
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-primary"
+                                                <div class="budget-price-square bg-success"
                                                     data-width="84%"></div>
                                                 <div class="budget-price-label">$107,133</div>
                                             </div>
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-danger"
+                                                <div class="budget-price-square bg-warning"
                                                     data-width="60%"></div>
                                                 <div class="budget-price-label">$91,455</div>
                                             </div>
@@ -224,12 +224,12 @@
                                         <div class="media-title">Headphone Blitz</div>
                                         <div class="mt-1">
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-primary"
+                                                <div class="budget-price-square bg-success"
                                                     data-width="34%"></div>
                                                 <div class="budget-price-label">$3,717</div>
                                             </div>
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-danger"
+                                                <div class="budget-price-square bg-warning"
                                                     data-width="28%"></div>
                                                 <div class="budget-price-label">$2,835</div>
                                             </div>
@@ -248,12 +248,12 @@
                                         <div class="media-title">oPhone X Lite</div>
                                         <div class="mt-1">
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-primary"
+                                                <div class="budget-price-square bg-success"
                                                     data-width="45%"></div>
                                                 <div class="budget-price-label">$13,972</div>
                                             </div>
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-danger"
+                                                <div class="budget-price-square bg-warning"
                                                     data-width="30%"></div>
                                                 <div class="budget-price-label">$9,660</div>
                                             </div>
@@ -272,12 +272,12 @@
                                         <div class="media-title">Old Camera</div>
                                         <div class="mt-1">
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-primary"
+                                                <div class="budget-price-square bg-success"
                                                     data-width="35%"></div>
                                                 <div class="budget-price-label">$7,391</div>
                                             </div>
                                             <div class="budget-price">
-                                                <div class="budget-price-square bg-danger"
+                                                <div class="budget-price-square bg-warning"
                                                     data-width="28%"></div>
                                                 <div class="budget-price-label">$5,472</div>
                                             </div>
@@ -288,12 +288,12 @@
                         </div>
                         <div class="card-footer d-flex justify-content-center pt-2">
                             <div class="budget-price justify-content-center">
-                                <div class="budget-price-square bg-primary"
+                                <div class="budget-price-square bg-success"
                                     data-width="20"></div>
                                 <div class="budget-price-label">Selling Price</div>
                             </div>
                             <div class="budget-price justify-content-center">
-                                <div class="budget-price-square bg-danger"
+                                <div class="budget-price-square bg-warning"
                                     data-width="20"></div>
                                 <div class="budget-price-label">Budget Price</div>
                             </div>
@@ -327,7 +327,7 @@
                                             <div class="text-muted text-small">67 Sales</div>
                                             <div class="product-cta">
                                                 <a href="#"
-                                                    class="btn btn-primary">Detail</a>
+                                                    class="btn btn-success">Detail</a>
                                             </div>
                                         </div>
                                     </div>
@@ -351,7 +351,7 @@
                                             <div class="text-muted text-small">86 Sales</div>
                                             <div class="product-cta">
                                                 <a href="#"
-                                                    class="btn btn-primary">Detail</a>
+                                                    class="btn btn-success">Detail</a>
                                             </div>
                                         </div>
                                     </div>
@@ -375,7 +375,7 @@
                                             <div class="text-muted text-small">63 Sales</div>
                                             <div class="product-cta">
                                                 <a href="#"
-                                                    class="btn btn-primary">Detail</a>
+                                                    class="btn btn-success">Detail</a>
                                             </div>
                                         </div>
                                     </div>
