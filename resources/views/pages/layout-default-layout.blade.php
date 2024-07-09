@@ -34,7 +34,7 @@
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                     <div class="card-footer bg-whitesmoke">
-                        This is card footer
+                        <a href="{{ url('features-post') }}" class="btn btn-primary px-3">Back</a>
                     </div>
                 </div>
             </div>
