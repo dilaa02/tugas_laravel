@@ -30,7 +30,7 @@ class FeatureController extends Controller
         ]);
 
         $items = Feature::create($request->all());
-        return response()->json($items, 201);
+        return view('features-post');
     }
 
    

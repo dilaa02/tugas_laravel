@@ -260,7 +260,7 @@ Route::get('/credits', function () {
 
 
 
-Route::post('/features-post-create', [FeatureController::class, 'store']);
+Route::post('/features-post-create', [FeatureController::class, 'store'])->name('pages.features-post-create');
 Route::get('/features-post-show/{id}', [FeatureController::class, 'show']);
 Route::post('/features-post-update/{id}', [FeatureController::class, 'update']);
 Route::post('/features-post-destroy/{id}', [FeatureController::class, 'destroy']);
