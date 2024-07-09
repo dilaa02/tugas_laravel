@@ -43,60 +43,64 @@
                             <div class="card-header">
                                 <h4>Add New Items</h4>
                             </div>
-                            <div class="card-body">
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text"
-                                            class="form-control"
+                            <form action="{{route('pages.features-post-create')}}" method="post">
+                                @csrf
+                                @method('POST')
+                                <div class="card-body">
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text"
+                                                class="form-control"
+                                                required="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <select class="form-control selectric">
+                                                <option>Tech</option>
+                                                <option>News</option>
+                                                <option>Political</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <textarea class="summernote-simple form-control" required=""></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date Picker</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text"
+                                            class="form-control datepicker"
                                             required="">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <select class="form-control selectric">
-                                            <option>Tech</option>
-                                            <option>News</option>
-                                            <option>Political</option>
-                                        </select>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <div id="image-preview"
+                                                class="image-preview">
+                                                <label for="image-upload"
+                                                    id="image-label">Choose File</label>
+                                                <input type="file"
+                                                    name="image"
+                                                    id="image-upload" />
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote-simple form-control" required=""></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date Picker</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text"
-                                        class="form-control datepicker"
-                                        required="">
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <div id="image-preview"
-                                            class="image-preview">
-                                            <label for="image-upload"
-                                                id="image-label">Choose File</label>
-                                            <input type="file"
-                                                name="image"
-                                                id="image-upload" />
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <button type="submit" class="btn btn-primary mx-1">Create Items</button>
+                                            <a href="{{ url('features-post') }}" class="btn btn-warning">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <button class="btn btn-primary mx-1">Create Post</button>
-                                        <a href="{{ url('features-post') }}" class="btn btn-warning">Cancel</a>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

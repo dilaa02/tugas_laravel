@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeatureController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,5 +45,16 @@ Route::get('/utilities-contact', function () {
     return view('pages.utilities-contact', ['type_menu' => 'utilities']);
 });
 
+// credits
+Route::get('/credits', function () {
+    return view('pages.credits', ['type_menu' => '']);
+});
+
+
+
+Route::post('/features-post-create', [FeatureController::class, 'store'])->name('pages.features-post-create');
+Route::get('/features-post-show/{id}', [FeatureController::class, 'show']);
+Route::post('/features-post-update/{id}', [FeatureController::class, 'update']);
+Route::post('/features-post-destroy/{id}', [FeatureController::class, 'destroy']);
 //post&get data
 Route::post('/features-post-create', []);
