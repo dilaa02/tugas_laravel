@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FeatureController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -256,3 +257,10 @@ Route::get('/utilities-subscribe', function () {
 Route::get('/credits', function () {
     return view('pages.credits', ['type_menu' => '']);
 });
+
+
+
+Route::post('/features-post-create', [FeatureController::class, 'store']);
+Route::get('/features-post-show/{id}', [FeatureController::class, 'show']);
+Route::post('/features-post-update/{id}', [FeatureController::class, 'update']);
+Route::post('/features-post-destroy/{id}', [FeatureController::class, 'destroy']);
