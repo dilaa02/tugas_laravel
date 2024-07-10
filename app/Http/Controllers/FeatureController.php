@@ -19,7 +19,8 @@ class FeatureController extends Controller
     
     public function create()
     {
-        //
+        $items = Feature::all();
+        return view('pages.features-post', compact('items'));
     }
 
         public function store(Request $request)
@@ -30,7 +31,7 @@ class FeatureController extends Controller
         ]);
 
         $items = Feature::create($request->all());
-        return view('features-post');
+        return response()->json($items, 201);
     }
 
    

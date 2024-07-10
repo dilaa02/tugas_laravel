@@ -56,5 +56,3 @@ Route::post('/features-post-create', [FeatureController::class, 'store'])->name(
 Route::get('/features-post-show/{id}', [FeatureController::class, 'show']);
 Route::post('/features-post-update/{id}', [FeatureController::class, 'update']);
 Route::post('/features-post-destroy/{id}', [FeatureController::class, 'destroy']);
-//post&get data
-Route::post('/features-post-create', []);

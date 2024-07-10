@@ -88,7 +88,7 @@
                                             <td>$240</td>
                                             <td>2018-01-20</td>
                                             <td>
-                                                <a href="{{ url('layout-default-layou') }}" class="btn btn-primary m-1">View</a>
+                                                <a href="{{ url('layout-default-layout') }}" class="btn btn-primary m-1">View</a>
                                                 <a href="{{ url('forms-editor') }}" class="btn btn-warning m-1">Edit</a>
                                                 <a href="#" class="btn btn-danger m-1">Trash</a>
                                             </td>

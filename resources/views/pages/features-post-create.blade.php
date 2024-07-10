@@ -66,6 +66,17 @@
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">Rp.</div>
+                                                </div>
+                                                <input class="form-control" type="text" name="price" id="price">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
                                         <div class="col-sm-12 col-md-7">
                                             <textarea class="summernote-simple form-control" required=""></textarea>
@@ -95,7 +106,7 @@
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                         <div class="col-sm-12 col-md-7">
-                                            <button type="submit" class="btn btn-primary mx-1">Create Items</button>
+                                            <a type="submit" href="{{url('features-post')}}" class="btn btn-primary mx-1">Create Items</a>
                                             <a href="{{ url('features-post') }}" class="btn btn-warning">Cancel</a>
                                         </div>
                                     </div>
@@ -126,4 +137,29 @@
     <!-- Page Specific JS File -->
     <script src="{{ asset('js/page/features-post-create.js') }}"></script>
     <script src="{{ asset('js/page/forms-advanced-forms.js') }}"></script>
+
+    <script>
+        var price = document.getElementById('price');
+        price.addEventListener('keyup', function(e)
+        {
+            price.value = formatRupiah(this.value);
+        });
+        
+        function formatRupiah(number, prefix)
+        {
+            var number_string = number.replace(/[^,\d]/g, '').toString(),
+                split = number_string.split(','),
+                separate = split[0].length % 3,
+                rupiah = split[0].substr(0, separate),
+                thousand = split[0].substr(separate).match(/\d{3}/gi);
+                
+            if (thousand) {
+                separator = separate ? '.' : '';
+                rupiah += separator + thousand.join('.');
+            }
+            
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
+    </script>
 @endpush
