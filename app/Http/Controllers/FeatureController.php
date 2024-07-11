@@ -28,10 +28,11 @@ class FeatureController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'category' => 'required|string|max:255',
+            'description' => 'required',
+            'price' => 'required'
         ]);
-
-        $items = Feature::create($request->all());
-        return response()->json($items, 201);
+        Feature::create($request->all());
+        return redirect()->route('pages.features-post');
     }
 
    
@@ -50,7 +51,8 @@ class FeatureController extends Controller
     {
         $request->validate([
             'title' => 'sometimes|string|max:255',
-            'category' => 'sometimes|string|max:255'
+            'category' => 'sometimes|string|max:255',
+            'description' => 'sometimes'
         ]);
 
         $items = Feature::findOrFail($feature);

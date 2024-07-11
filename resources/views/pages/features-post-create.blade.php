@@ -43,7 +43,7 @@
                             <div class="card-header">
                                 <h4>Add New Items</h4>
                             </div>
-                            <form action="{{route('pages.features-post-create')}}" method="post">
+                            <form action="{{route('post-create')}}" method="POST">
                                 @csrf
                                 @method('POST')
                                 <div class="card-body">
@@ -51,14 +51,15 @@
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
                                         <div class="col-sm-12 col-md-7">
                                             <input type="text"
-                                                class="form-control"
-                                                required="">
+                                                class="form-control" 
+                                                name="title"
+                                                id="title">
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <select class="form-control selectric">
+                                            <select class="form-control selectric" name="category">
                                                 <option>Tech</option>
                                                 <option>News</option>
                                                 <option>Political</option>
@@ -79,13 +80,14 @@
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <textarea class="summernote-simple form-control" required=""></textarea>
+                                            <textarea class="form-control" required="" name="description"></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date Picker</label>
                                         <div class="col-sm-12 col-md-7">
                                             <input type="text"
+                                            name="date"
                                             class="form-control datepicker"
                                             required="">
                                         </div>
@@ -106,7 +108,7 @@
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                         <div class="col-sm-12 col-md-7">
-                                            <a type="submit" href="{{url('features-post')}}" class="btn btn-primary mx-1">Create Items</a>
+                                            <button type="submit" class="btn btn-primary mx-1">Create Items</button>
                                             <a href="{{ url('features-post') }}" class="btn btn-warning">Cancel</a>
                                         </div>
                                     </div>
