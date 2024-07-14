@@ -46,53 +46,34 @@
                                 </div>
 
                                 <div class="clearfix mb-3"></div>
-
                                 <div class="table-responsive">
                                     <table class="table-striped table">
                                         <tr>
-                                            <th class="pt-2 text-center">
-                                                <div class="custom-checkbox custom-checkbox-table custom-control">
-                                                    <input type="checkbox"
-                                                        data-checkboxes="mygroup"
-                                                        data-checkbox-role="dad"
-                                                        class="custom-control-input"
-                                                        id="checkbox-all">
-                                                    <label for="checkbox-all"
-                                                        class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </th>
+                                            <th class="pt-2 m-0">#</th>
                                             <th>Title</th>
                                             <th>Category</th>
                                             <th>Price</th>
                                             <th>Created At</th>
                                             <th>Action</th>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="custom-checkbox custom-control">
-                                                    <input type="checkbox"
-                                                        data-checkboxes="mygroup"
-                                                        class="custom-control-input"
-                                                        id="checkbox-2">
-                                                    <label for="checkbox-2"
-                                                        class="custom-control-label">&nbsp;</label>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                Laravel 5 Tutorial: Introduction
-                                            </td>
-                                            <td>
-                                                <a href="#">Web Developer</a>,
-                                                <a href="#">Tutorial</a>
-                                            </td>
-                                            <td>$240</td>
-                                            <td>2018-01-20</td>
-                                            <td>
-                                                <a href="{{ url('layout-default-layout') }}" class="btn btn-primary m-1">View</a>
-                                                <a href="{{ url('forms-editor') }}" class="btn btn-warning m-1">Edit</a>
-                                                <a href="" class="btn btn-danger m-1">Trash</a>
-                                            </td>
-                                        </tr>
+                                        @foreach ($items as $item)
+                                            <tr>
+                                                <th scope="row" class="m-0">{{ $loop->iteration }}</th>
+                                                <td>{{ $item->title }}</td>
+                                                <td>{{ $item->category }}</td>
+                                                <td>{{ $item->price }}</td>
+                                                <td>{{ $item->date }}</td>
+                                                <td>
+                                                    <a href="{{ url('layout-default-layout') }}" class="btn btn-primary">View</a>
+                                                    <a href="{{ url('forms-editor') }}" class="btn btn-warning">Edit</a>
+                                                    <form action="{{route('post-destroy', $id->id)}}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger m-1">Trash</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </table>
                                 </div>
                                 <div class="float-right">

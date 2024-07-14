@@ -13,7 +13,8 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        return view('pages.features-post'); 
+        $items = Feature::all();
+        return view('pages.features-post', compact('items')); 
     }
 
     
@@ -28,11 +29,13 @@ class FeatureController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'category' => 'required|string|max:255',
+            'date' => 'required|string',
             'description' => 'required',
-            'price' => 'required'
+            'price' => 'required',
         ]);
+
         Feature::create($request->all());
-        return redirect()->route('pages.features-post');
+        return redirect()->route('features-post');
     }
 
    
@@ -63,8 +66,8 @@ class FeatureController extends Controller
    
     public function destroy(Feature $feature)
     {
-        $items = Feature::findOrFail($feature);
-        $items->delete();
-        return response()->json(null, 204);
+        $id = Feature::find($feature);
+        $id->delete();
+        return redirect()->route('features-post');
     }
 }

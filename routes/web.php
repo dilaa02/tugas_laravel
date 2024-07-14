@@ -17,41 +17,27 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/dashboard-ecommerce-dashboard');
 
 Route::get('/dashboard-ecommerce-dashboard', function () {
-    return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
+    return view('pages.dashboard-ecommerce-dashboard');
 });
 
 // Layout
 Route::get('/layout-default-layout', function () {
-    return view('pages.layout-default-layout', ['type_menu' => 'layout']);
+    return view('pages.layout-default-layout');
 });
 
 Route::get('/forms-editor', function () {
-    return view('pages.forms-editor', ['type_menu' => 'forms']);
+    return view('pages.forms-editor');
 });
 
 Route::get('/modules-chartjs', function () {
-    return view('pages.modules-chartjs', ['type_menu' => 'modules']);
+    return view('pages.modules-chartjs');
 });
 
 Route::get('/features-post-create', function () {
-    return view('pages.features-post-create', ['type_menu' => 'features']);
+    return view('pages.features-post-create');
 });
-Route::get('/features-post', function () {
-    return view('pages.features-post', ['type_menu' => 'features']);
-});
-
-// utilities
-Route::get('/utilities-contact', function () {
-    return view('pages.utilities-contact', ['type_menu' => 'utilities']);
-});
-
-// credits
-Route::get('/credits', function () {
-    return view('pages.credits', ['type_menu' => '']);
-});
-
-
+Route::get('/features-post', [FeatureController::class, 'index'])->name('features-post');
 Route::post('/features-post-create', [FeatureController::class, 'store'])->name('post-create');
 Route::get('/features-post-show/{id}', [FeatureController::class, 'show']);
 Route::post('/features-post-update/{id}', [FeatureController::class, 'update']);
-Route::delete('/features-post-destroy/{id}', [FeatureController::class, 'destroy'])->name('post-destroy');
+Route::post('/features-post-destroy/{id}', [FeatureController::class, 'destroy'])->name('post-destroy');
