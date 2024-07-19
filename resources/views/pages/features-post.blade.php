@@ -49,7 +49,7 @@
                                 <div class="table-responsive">
                                     <table class="table-striped table">
                                         <tr>
-                                            <th class="pt-2 m-0">#</th>
+                                            <th class="">#</th>
                                             <th>Title</th>
                                             <th>Category</th>
                                             <th>Price</th>
@@ -58,15 +58,17 @@
                                         </tr>
                                         @foreach ($items as $item)
                                             <tr>
-                                                <th scope="row" class="m-0">{{ $loop->iteration }}</th>
-                                                <td>{{ $item->title }}</td>
-                                                <td>{{ $item->category }}</td>
-                                                <td>{{ $item->price }}</td>
-                                                <td>{{ $item->date }}</td>
-                                                <td>
-                                                    <a href="{{ url('layout-default-layout') }}" class="btn btn-primary">View</a>
-                                                    <a href="{{ url('forms-editor') }}" class="btn btn-warning">Edit</a>
-                                                    <form action="{{route('post-destroy', $id->id)}}" method="POST">
+                                                <th scope="row" class="">{{ $loop->iteration }}</th>
+                                                <td class="">{{ $item->title }}</td>
+                                                <td class="">{{ $item->category }}</td>
+                                                <td class="">{{ $item->price }}</td>
+                                                <td class="">{{ $item->date }}</td>
+                                                <td class="d-flex">
+                                                    <div>
+                                                        <a href="{{ route('post-view', $item->id) }}" class="btn btn-primary m-1">View</a>
+                                                        <a href="{{ route('post-edit', $item->id) }}" class="btn btn-warning m-1">Edit</a>
+                                                    </div>
+                                                    <form action="{{route('post-destroy', $item->id)}}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger m-1">Trash</button>

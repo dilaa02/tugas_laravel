@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Default Layout')
+@section('title', $items->title)
 
 @push('style')
     <!-- CSS Libraries -->
@@ -13,30 +13,45 @@
                 <h1>Default Layout</h1>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                    <div class="breadcrumb-item"><a href="#">Layout</a></div>
-                    <div class="breadcrumb-item">Default Layout</div>
+                    <div class="breadcrumb-item"><a href="#">View</a></div>
+                    <div class="breadcrumb-item">{{ $items->title }}</div>
                 </div>
             </div>
-
             <div class="section-body">
-                <h2 class="section-title">This is Example Page</h2>
+                <h2 class="section-title">Des</h2>
                 <p class="section-lead">This page is just an example for you to create your own page.</p>
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Example Card</h4>
+                    <div class="card">
+                            <div class="card-header">
+                                <h4>{{ $items->title }}</h4>
+                            </div>
+                            <div class="card-body">
+                                <table>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>:</th>
+                                        <td>{{ $items->category }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Price</th>
+                                        <th>:</th>
+                                        <td>{{ $items->price }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Date Added</th>
+                                        <th>:</th>
+                                        <td>{{ $items->date }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>:</th>
+                                        <td>{{ $items->description }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="card-footer bg-whitesmoke">
+                                <a href="{{ url('features-post') }}" class="btn btn-primary px-3">Back</a>
+                            </div>
                     </div>
-                    <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    </div>
-                    <div class="card-footer bg-whitesmoke">
-                        <a href="{{ url('features-post') }}" class="btn btn-primary px-3">Back</a>
-                    </div>
-                </div>
             </div>
         </section>
     </div>

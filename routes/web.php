@@ -14,30 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/dashboard-ecommerce-dashboard');
-
-Route::get('/dashboard-ecommerce-dashboard', function () {
-    return view('pages.dashboard-ecommerce-dashboard');
-});
-
-// Layout
-Route::get('/layout-default-layout', function () {
-    return view('pages.layout-default-layout');
-});
-
-Route::get('/forms-editor', function () {
-    return view('pages.forms-editor');
-});
-
-Route::get('/modules-chartjs', function () {
-    return view('pages.modules-chartjs');
-});
-
-Route::get('/features-post-create', function () {
-    return view('pages.features-post-create');
-});
+Route::redirect('/', '/features-post');
 Route::get('/features-post', [FeatureController::class, 'index'])->name('features-post');
-Route::post('/features-post-create', [FeatureController::class, 'store'])->name('post-create');
-Route::get('/features-post-show/{id}', [FeatureController::class, 'show']);
-Route::post('/features-post-update/{id}', [FeatureController::class, 'update']);
-Route::post('/features-post-destroy/{id}', [FeatureController::class, 'destroy'])->name('post-destroy');
+Route::get('/features-post-create', [FeatureController::class, 'create'])->name('post-create');
+Route::post('/features-post-store', [FeatureController::class, 'store'])->name('post-store');
+Route::get('/features-post-show/{id}', [FeatureController::class, 'show'])->name('post-view');
+Route::get('/features-post-edit/{id}', [FeatureController::class, 'edit'])->name('post-edit');
+Route::put('/features-post-update/{id}', [FeatureController::class, 'update'])->name('post-update');
+Route::delete('/features-post-destroy/{id}', [FeatureController::class, 'destroy'])->name('post-destroy');

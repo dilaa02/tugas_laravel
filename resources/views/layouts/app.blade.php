@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
         name="viewport">
-    <title>@yield('title') &mdash; Stisla</title>
+    <title>@yield('title') &mdash; Myy</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet"
@@ -43,12 +43,9 @@
 
 <body>
     <div id="app">
-        <div class="main-wrapper">
+        <div class="">
             <!-- Header -->
             @include('components.header')
-
-            <!-- Sidebar -->
-            @include('components.sidebar')
 
             <!-- Content -->
             @yield('main')

@@ -21,7 +21,7 @@ class FeatureController extends Controller
     public function create()
     {
         $items = Feature::all();
-        return view('pages.features-post', compact('items'));
+        return view('pages.features-post-create', compact('items'));
     }
 
         public function store(Request $request)
@@ -39,35 +39,36 @@ class FeatureController extends Controller
     }
 
    
-    public function show(Feature $feature)
+    public function show(Request $request, $id, Feature $features)
     {
-        $items = Feature::findOrFail($feature);
-        return response()->json($items, 201);
+        $items = Feature::find($id);
+        return view('pages.layout-default-layout', compact('items'));
     }
 
-        public function edit(Feature $feature)
+        public function edit(Request $request, $id, Feature $features)
     {
-        //
+        $items = Feature::find($id);
+        return view('pages.forms-editor', compact('items'));
     }
 
-       public function update(Request $request, Feature $feature)
+       public function update(Request $request, $id, Feature $features)
     {
+        $features = Feature::findOrFail($id);
         $request->validate([
-            'title' => 'sometimes|string|max:255',
-            'category' => 'sometimes|string|max:255',
-            'description' => 'sometimes'
+            'title' =>'required',
+            'category' => 'required',
+            'date' => 'required',
+            'description' => 'required',
+            'price' => 'required',
         ]);
-
-        $items = Feature::findOrFail($feature);
-        $items->update($request->all());
-        return response()->json($items);
+        $features->update($request->all());
+        return redirect()->route('features-post');
     }
 
    
-    public function destroy(Feature $feature)
+    public function destroy(Feature $id)
     {
-        $id = Feature::find($feature);
-        $id->delete();
-        return redirect()->route('features-post');
+      $id->delete();
+      return redirect()->route('features-post');
     }
 }

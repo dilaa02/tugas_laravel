@@ -43,7 +43,7 @@
                             <div class="card-header">
                                 <h4>Add New Items</h4>
                             </div>
-                            <form action="{{route('post-create')}}" method="POST">
+                            <form action="{{route('post-store')}}" method="POST">
                                 @csrf
                                 @method('POST')
                                 <div class="card-body">

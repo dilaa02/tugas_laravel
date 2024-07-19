@@ -3046,9 +3046,6 @@ pre {
   transition: all 0.5s;
 }
 
-body.sidebar-gone .main-sidebar {
-  left: -250px;
-}
 
 body.sidebar-mini .hide-sidebar-mini {
   display: none !important;
@@ -3097,7 +3094,7 @@ body.sidebar-mini .main-sidebar .sidebar-brand {
   display: none;
 }
 body.sidebar-mini .main-sidebar .sidebar-brand-sm {
-  display: block;
+  display: flex;
 }
 body.sidebar-mini .main-sidebar .sidebar-menu > li {
   padding: 10px;
@@ -3173,14 +3170,7 @@ body.sidebar-mini .main-sidebar .sidebar-menu li:hover > ul.dropdown-menu li:hov
   background-color: #fcfcfd;
 }
 body.sidebar-mini .main-sidebar .sidebar-menu li:hover > ul.dropdown-menu li .dropdown-menu {
-  left: 200px;
   padding: 0;
-}
-body.sidebar-mini .navbar {
-  left: 65px;
-}
-body.sidebar-mini .main-content, body.sidebar-mini .main-footer {
-  padding-left: 90px;
 }
 
 body.layout-2 .navbar-bg {
@@ -3239,15 +3229,6 @@ body.layout-2 .main-sidebar .sidebar-menu li.active ul.dropdown-menu a {
 }
 body.layout-2 .main-content {
   padding-top: 107px;
-  padding-left: 30px;
-  padding-right: 0;
-  width: calc(100% - 200px);
-}
-body.layout-2 .main-footer {
-  margin-left: 230px;
-  width: calc(100% - 230px);
-  padding-left: 0;
-  padding-right: 0;
 }
 
 body.layout-3 .navbar {
@@ -3351,7 +3332,6 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item:hover > .dropdown-menu {
   display: block !important;
   top: -5px;
-  left: 200px;
 }
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item.active > .nav-link,
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link:focus {
@@ -3359,13 +3339,7 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
   color: #fff;
 }
 body.layout-3 .main-content {
-  padding-left: 0;
-  padding-right: 0;
   padding-top: 170px;
-}
-body.layout-3 .main-footer {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .main-sidebar .sidebar-brand {
@@ -3503,7 +3477,7 @@ body.layout-3 .main-footer {
 }
 
 .main-content {
-  padding-left: 280px;
+  padding-left: 30px;
   padding-right: 30px;
   padding-top: 80px;
   width: 100%;
@@ -3511,7 +3485,7 @@ body.layout-3 .main-footer {
 }
 
 .main-footer {
-  padding: 20px 30px 20px 280px;
+  padding: 20px 30px 20px 30px;
   margin-top: 40px;
   color: #98a6ad;
   border-top: 1px solid #e3eaef;
@@ -3562,7 +3536,6 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a:before {
   background-color: #47c363;
 }
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-menu li a {
-  padding-left: 61px;
   background-color: #fff;
 }
 

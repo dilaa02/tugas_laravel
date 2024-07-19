@@ -70,13 +70,8 @@ h1, h2, h3, h4, h5, h6, p, a, span, input, textarea, select, option, label {
   font-family: Vazir, Tahoma, Arial;
 }
 
-.main-sidebar {
-  right: 0;
-  left: auto;
-}
-
 .main-content {
-  padding-right: 280px;
+  padding-right: 30px;
   padding-left: 30px;
 }
 
@@ -91,7 +86,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, input, textarea, select, option, label {
   padding-right: 0px;
 }
 
-body.sidebar-mini .main-sidebar:after {
+body.sidebar-mini  :after {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   content: " ";
   position: fixed;
@@ -125,61 +120,49 @@ body.sidebar-mini .main-sidebar:after {
   margin-right: 3px;
 }
 
-.main-sidebar .sidebar-menu li ul.dropdown-menu li a {
+  .sidebar-menu li ul.dropdown-menu li a {
   padding-left: auto !important;
-  padding-right: 65px;
+  padding-right: auto;
 }
 
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-menu li a {
   padding-left: 0;
 }
-body.sidebar-mini .main-sidebar .sidebar-menu > li ul.dropdown-menu {
-  left: auto;
-  right: 65px;
-}
-body.layout-2 .main-sidebar .sidebar-menu li a.has-dropdown::after {
+body.sidebar-mini   .sidebar-menu > li ul.dropdown-menu {
   left: 0;
-  right: auto;
+  right: 0;
+}
+body.layout-2   .sidebar-menu li a.has-dropdown::after {
+  left: 0;
+  right: 0;
 }
 body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a::before {
   right: 0;
 }
 body.layout-2 .main-content {
   padding-top: 107px;
-  padding-right: 30px;
-  padding-left: 0;
-  width: calc(100% - 200px);
 }
-body.layout-2 .main-sidebar .sidebar-menu li ul.dropdown-menu li a {
-  padding-right: 34px;
+body.layout-2   .sidebar-menu li ul.dropdown-menu li a {
+  padding-right: 0;
   padding-left: 0;
 }
 
-.main-sidebar .sidebar-menu li a.has-dropdown::after {
-  left: 20px;
+  .sidebar-menu li a.has-dropdown::after {
+  left: auto;
   right: auto;
 }
 
 body.sidebar-mini .navbar {
-  right: 65px;
+  right: 0px;
   left: 0px;
 }
-body.sidebar-mini .main-content, body.sidebar-mini .main-footer {
-  padding-right: 90px;
-  padding-left: 30px;
-}
-body.layout-2 .main-footer {
-  margin-right: 230px;
-  width: calc(100% - 230px);
-  padding-right: 20px;
-}
 
-.main-sidebar .sidebar-menu li {
+  .sidebar-menu li {
   text-align: right;
 }
 
 .navbar {
-  right: 250px;
+  right: 0px;
   left: 0px;
 }
 
@@ -204,9 +187,9 @@ body.layout-2 .navbar {
   right: 0;
 }
 
-.main-sidebar .sidebar-menu li a i {
+  .sidebar-menu li a i {
   float: right;
-  margin-left: 15px !important;
+  margin-left: 15px;
   text-align: center;
 }
 
@@ -222,16 +205,10 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .ion, a:not(.btn-social
   margin-left: 0;
 }
 
-.main-sidebar .sidebar-menu li a.has-dropdown::after {
+  .sidebar-menu li a.has-dropdown::after {
   float: left;
 }
 
-body.sidebar-gone .main-sidebar {
-  right: -250px;
-}
-body.sidebar-gone .main-content {
-  padding-right: 30px;
-}
 body.sidebar-gone .navbar {
   right: 0;
 }
@@ -259,7 +236,7 @@ body.sidebar-gone .navbar {
   right: auto;
 }
 
-.main-sidebar .sidebar-menu li a .badge {
+  .sidebar-menu li a .badge {
   float: left;
 }
 
@@ -302,14 +279,14 @@ body.sidebar-gone .navbar {
   font-family: Vazir, Tahoma, Arial;
 }
 
-.main-sidebar .sidebar-user .sidebar-user-picture {
+  .sidebar-user .sidebar-user-picture {
   float: right;
   margin-left: 10px;
 }
 
 .main-footer {
   font-family: Vazir, Tahoma, Arial;
-  padding: 20px 280px 20px 30px;
+  padding: 20px 30px 20px 30px;
   font-size: 90%;
   border-top: solid 1px #EEE;
   background-color: #FFF;
@@ -378,20 +355,8 @@ body.layout-2 .main-footer, body.layout-3 .main-footer {
 }
 
 body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link.has-dropdown {
-  margin-left: 35px;
+  margin-left: 0;
   margin-right: 0;
-}
-body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item > .nav-link.has-dropdown::after {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  font-size: 12px;
-  right: unset;
-  left: -20px;
-}
-body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-link::before {
-  right: 35px;
-  left: 0;
 }
 
 .dropdown-menu-left {
@@ -401,14 +366,6 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item.active > .nav-lin
   right: 100%;
 }
 
-body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .nav-item .nav-link.has-dropdown::after {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  font-size: 12px;
-  right: unset;
-  left: 15px;
-}
 
 .alert-dismissible .close {
   position: absolute;

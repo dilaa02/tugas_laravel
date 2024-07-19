@@ -43,60 +43,64 @@
                             <div class="card-header">
                                 <h4>Items Update</h4>
                             </div>
-                            <div class="card-body">
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text"
-                                            class="form-control"
-                                            required="">
+                            <form action="{{ route('post-update', $items->id) }}" method="post">
+                                @csrf
+                                @method('PUT')
+                                <div class="card-body">
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text"
+                                                class="form-control"
+                                                name="title" id="title"
+                                                value="{{$items->title}}">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <select class="form-control selectric">
-                                            <option>Tech</option>
-                                            <option>News</option>
-                                            <option>Political</option>
-                                        </select>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <select class="form-control selectric" name="category" id="category" value="{{$items->category}}">
+                                                <option>Tech</option>
+                                                <option>News</option>
+                                                <option>Political</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <textarea class="summernote-simple form-control" required=""></textarea>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">Rp.</div>
+                                                </div>
+                                                <input class="form-control" type="text" name="price" id="price" value="{{$items->price}}">
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date Picker</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <input type="text"
-                                        class="form-control datepicker"
-                                        required="">
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text" class="form-control" name="description" id="description" value="{{$items->description}}"></input>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <div id="image-preview"
-                                            class="image-preview">
-                                            <label for="image-upload"
-                                                id="image-label">Choose File</label>
-                                            <input type="file"
-                                                name="image"
-                                                id="image-upload" />
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Date Picker</label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <input type="text"
+                                            class="form-control datepicker"
+                                            name="date" id="date"
+                                            value="{{$items->date}}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-4">
+                                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                        <div class="col-sm-12 col-md-7">
+                                            <button type="submit" class="btn btn-primary mx-1">Update</button>
+                                            <a href="{{ url('features-post') }}" class="btn btn-warning">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group row mb-4">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                    <div class="col-sm-12 col-md-7">
-                                        <button class="btn btn-primary mx-1">Update</button>
-                                        <a href="{{ url('features-post') }}" class="btn btn-warning">Cancel</a>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -122,4 +126,29 @@
     <!-- Page Specific JS File -->
     <script src="{{ asset('js/page/features-post-create.js') }}"></script>
     <script src="{{ asset('js/page/forms-advanced-forms.js') }}"></script>
+
+    <script>
+        var price = document.getElementById('price');
+        price.addEventListener('keyup', function(e)
+        {
+            price.value = formatRupiah(this.value);
+        });
+        
+        function formatRupiah(number, prefix)
+        {
+            var number_string = number.replace(/[^,\d]/g, '').toString(),
+                split = number_string.split(','),
+                separate = split[0].length % 3,
+                rupiah = split[0].substr(0, separate),
+                thousand = split[0].substr(separate).match(/\d{3}/gi);
+                
+            if (thousand) {
+                separator = separate ? '.' : '';
+                rupiah += separator + thousand.join('.');
+            }
+            
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix == undefined ? rupiah : (rupiah ? 'Rp. ' + rupiah : '');
+        }
+    </script>
 @endpush
